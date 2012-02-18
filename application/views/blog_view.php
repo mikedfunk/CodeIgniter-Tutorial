@@ -7,22 +7,18 @@
 		
 <?php
 // todo items
-if (count($todo) > 0):
+if (count($query) > 0):
+	$result = $query->result();
+	foreach ($result as $item):
 ?>
 
-<ol>
+<h3><?=$item->title?></h3>
+<p><?=$item->content?></p>
+<hr />
 
-<?php
-	foreach ($todo as $item):
-?>
-
-<li><?=$item?></li>
-
-<?php endforeach; ?>
-
-</ol>
-
-<?php endif; ?>
+<?php 
+	endforeach; 
+endif; ?>
 
 	</body>
 </html>

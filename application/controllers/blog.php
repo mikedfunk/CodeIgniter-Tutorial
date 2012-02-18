@@ -48,17 +48,18 @@ class blog extends CI_Controller
 	 */
 	public function index()
 	{
-		$this->load->database();
-		
+		// $this->load->database();
 		$data = array(
 			'title' => 'My Blog Title',
 			'heading' => 'My Blog Heading',
-			'todo' => array(
-				'clean house',
-				'eat lunch',
-				'call mom'
-			)
+			'query' => $this->db->get('articles')
+// 			'todo' => array(
+// 				'clean house',
+// 				'eat lunch',
+// 				'call mom'
+// 			)
 		);
+		
 		$this->load->view('blog_view', $data);
 	}
 	

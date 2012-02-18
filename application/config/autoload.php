@@ -78,7 +78,7 @@ $autoload['packages'] = array(APPPATH.'third_party/error_arrays', APPPATH.'third
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array();
+$autoload['libraries'] = array('database');
 
 
 /*
