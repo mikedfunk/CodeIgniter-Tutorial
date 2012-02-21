@@ -1,15 +1,15 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
- * blog_view
+ * comment_view
  * 
- * the list of blog entries
+ * the blog entry comments
  * 
  * @license		Copyright Xulon Press, Inc. All Rights Reserved.
  * @author		Xulon Press
  * @link		http://xulonpress.com
  * @email		info@xulonpress.com
  * 
- * @file		blog_view.php
+ * @file		comment_view.php
  * @version		1.0
  * @date		02/20/2012
  * 
@@ -32,18 +32,30 @@ if ($query->num_rows() > 0):
 	foreach ($result as $item):
 ?>
 
-<h3><?=$item->title?></h3>
 <p><?=$item->content?></p>
+<p>by <?=$item->author?></p>
 <hr />
-
-<p><?=anchor('blog/comments/'.$item->id, 'Comments')?></p>
 
 <?php 
 	endforeach; 
 endif; ?>
 
+<p><?=anchor('blog', '&laquo; Back to Blog')?></p>
+
+		
+<?php $hidden = array('article_id' => $this->uri->segment(3)); ?>
+<?=form_open('blog/comment_insert', '', $hidden)?>
+
+<p><?=form_textarea('content')?></p>
+
+<p><?=form_input('author')?></p>
+
+<button type="submit">Submit</button>
+
+</form>
+
 	</body>
 </html>
 <?php
-/* End of file blog_view.php */
-/* Location: ./ci_tutorial/application/views/blog_view.php */
+/* End of file comment_view.php */
+/* Location: ./ci_tutorial/application/views/comment_view.php */

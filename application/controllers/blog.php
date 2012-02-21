@@ -36,6 +36,9 @@ class blog extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
+		
+		$this->load->helper('url');
+		$this->load->helper('form');
 	}
 	
 	// --------------------------------------------------------------------------
@@ -53,14 +56,44 @@ class blog extends CI_Controller
 			'title' => 'My Blog Title',
 			'heading' => 'My Blog Heading',
 			'query' => $this->db->get('articles')
-// 			'todo' => array(
-// 				'clean house',
-// 				'eat lunch',
-// 				'call mom'
-// 			)
 		);
 		
 		$this->load->view('blog_view', $data);
+	}
+	
+	// --------------------------------------------------------------------------
+	
+	/**
+	 * comments function.
+	 * 
+	 * @access public
+	 * @param string $article_id
+	 * @return void
+	 */
+	public function comments($article_id)
+	{
+		$data = array(
+			'title' => 'My Comment Title',
+			'heading' => 'My Comment Heading'
+		);
+		$this->db->where('article_id', $article_id);
+		$data['query'] = $this->db->get('comments');
+		
+		$this->load->view('comment_view', $data);
+	}
+	
+	// --------------------------------------------------------------------------
+	
+	/**
+	 * comment_insert function.
+	 * 
+	 * @access public
+	 * @return void
+	 */
+	public function comment_insert()
+	{
+		$this->db->insert('comments', $_POST);
+		redirect('blog/comments/'.$_POST['article_id']);
 	}
 	
 	// --------------------------------------------------------------------------
