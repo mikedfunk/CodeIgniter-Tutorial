@@ -4,10 +4,10 @@
  * 
  * Example blog controller
  * 
- * @license		Copyright Xulon Press, Inc. All Rights Reserved.
- * @author		Xulon Press
- * @link		http://xulonpress.com
- * @email		info@xulonpress.com
+ * @license		http://www.apache.org/licenses/LICENSE-2.0  Apache License 2.0
+ * @author		Mike Funk
+ * @link		http://mikefunk.com
+ * @email		mike@mikefunk.com
  * 
  * @file		blog.php
  * @version		1.0
@@ -45,6 +45,8 @@ class blog extends CI_Controller
 	
 	/**
 	 * index function.
+	 *
+	 * shows each blog article with a link to comments
 	 * 
 	 * @access public
 	 * @return void
@@ -65,6 +67,8 @@ class blog extends CI_Controller
 	
 	/**
 	 * comments function.
+	 *
+	 * the comments for a specific blog article with a new comment form
 	 * 
 	 * @access public
 	 * @param string $article_id
@@ -86,6 +90,8 @@ class blog extends CI_Controller
 	
 	/**
 	 * comment_insert function.
+	 *
+	 * inserts a comment, redirects back to comments
 	 * 
 	 * @access public
 	 * @return void

@@ -1,3 +1,23 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+/**
+ * template_view
+ * 
+ * A template with twitter bootstrap implemented
+ * 
+ * @license		http://www.apache.org/licenses/LICENSE-2.0  Apache License 2.0
+ * @author		Mike Funk
+ * @link		http://mikefunk.com
+ * @email		mike@mikefunk.com
+ * 
+ * @file		template_view.php
+ * @version		1.0
+ * @date		02/20/2012
+ * 
+ * Copyright (c) 2012
+ */
+ 
+// --------------------------------------------------------------------------
+?>
 <!DOCTYPE html>
 <html lang="en" class="">
   <head>
