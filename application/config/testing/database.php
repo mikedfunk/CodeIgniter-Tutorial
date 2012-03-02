@@ -71,24 +71,24 @@
 | the active record class
 */
 
-$active_group = 'local';
+$active_group = 'testing';
 $active_record = TRUE;
 
-$db['local']['hostname'] = '127.0.0.1';
-$db['local']['username'] = 'root';
-$db['local']['password'] = '';
-$db['local']['database'] = 'ci_tutorial_test'; // requires _test at the end
-$db['local']['dbdriver'] = 'mysql';
-$db['local']['dbprefix'] = '';
-$db['local']['pconnect'] = TRUE;
-$db['local']['db_debug'] = (ENVIRONMENT == 'production' ? FALSE : TRUE);
-$db['local']['cache_on'] = FALSE;
-$db['local']['cachedir'] = FCPATH.APPPATH.'db_cache/';
-$db['local']['char_set'] = 'utf8';
-$db['local']['dbcollat'] = 'utf8_general_ci';
-$db['local']['swap_pre'] = '';
-$db['local']['autoinit'] = TRUE;
-$db['local']['stricton'] = FALSE;
+$db['testing']['hostname'] = '127.0.0.1';
+$db['testing']['username'] = 'root';
+$db['testing']['password'] = '';
+$db['testing']['database'] = 'db_name_test'; // requires _test at the end
+$db['testing']['dbdriver'] = 'mysql';
+$db['testing']['dbprefix'] = '';
+$db['testing']['pconnect'] = TRUE;
+$db['testing']['db_debug'] = (ENVIRONMENT == 'production' ? FALSE : TRUE);
+$db['testing']['cache_on'] = FALSE;
+$db['testing']['cachedir'] = FCPATH.APPPATH.'db_cache/';
+$db['testing']['char_set'] = 'utf8';
+$db['testing']['dbcollat'] = 'utf8_general_ci';
+$db['testing']['swap_pre'] = '';
+$db['testing']['autoinit'] = TRUE;
+$db['testing']['stricton'] = FALSE;
 
 $db['remote']['hostname'] = 'hostname';
 $db['remote']['username'] = 'username';
